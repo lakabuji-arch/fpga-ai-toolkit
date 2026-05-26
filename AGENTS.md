@@ -1,5 +1,5 @@
 # AGENTS.md — JESD204B PHY Example Design
-
+>这是一个例子
 > 本文件告诉 AI 如何在本工程中正确工作。
 > 来源: impakt73/ai-rust-hw-dev (AGENTS.md 概念), OpenHW CVA6 (AI政策)
 
