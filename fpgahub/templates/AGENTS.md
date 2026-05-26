@@ -7,16 +7,18 @@
 
 | 项 | 值 |
 |----|-----|
-| 器件 | [XCKU5P-FFVB676-2-I] |
-| 工具 | [Vivado 2025.2] |
-| 语言 | [Verilog / SystemVerilog] |
-| 仿真 | [cocotb (默认) / Vivado Simulator (备选)] |
+| 器件 | `<YOUR_PART>` (如 xcku5p-ffvb676-2-i) |
+| 工具 | `<YOUR_TOOL>` (如 Vivado 2025.2 / Quartus / Yosys) |
+| 语言 | `<YOUR_LANG>` (如 SystemVerilog / Verilog / VHDL) |
+| 仿真 | cocotb (默认) / `<YOUR_SIM>` (备选) |
 
 ## 时钟域
 
 | 时钟名 | 频率 | 来源 | 用途 |
 |--------|------|------|------|
-| [clk_100m] | [100 MHz] | [外部晶振] | [系统主时钟] |
+| `<YOUR_CLK_A>` | `<频率>` | `<来源>` | `<用途>` |
+| `<YOUR_CLK_B>` | `<频率>` | `<来源>` | `<用途>` |
+<!-- 每行一个时钟域，按实际情况填写 -->
 
 ## RTL 编码规范
 
