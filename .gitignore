@@ -1,0 +1,46 @@
+# Vivado 临时文件
+*.jou
+*.log
+*.str
+*.backup.jou
+*.backup.log
+vivado_*.str
+vivado_*.log
+vivado_pid*.str
+vivado.jou
+
+# Vivado 工程本地文件
+*.xpr
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.gen/
+*.srcs/
+*.ip_user_files/
+
+# 综合临时
+*.dcp
+*.pb
+*.wdf
+*.vds
+dfx_runtime.txt
+htr.txt
+gen_run.xml
+ISEWrap.js
+ISEWrap.sh
+rundef.js
+runme.bat
+runme.sh
+project.wdf
+
+# 网表
+netlist/
+
+# 输出
+output/
+reports/
+
+# OS
+.DS_Store
+Thumbs.db
