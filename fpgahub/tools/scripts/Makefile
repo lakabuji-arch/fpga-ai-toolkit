@@ -18,13 +18,17 @@ SIM_DIR  := sim
 OUT_DIR  := output
 RPT_DIR  := reports
 
+# 工具路径 (根据本机安装修改)
+PYTHON   := $(LOCALAPPDATA)\Programs\Python\Python313\python.exe
+VERIBLE  := C:\verible\verible-v0.0-4053-g89d4d98a-win64
+
 # ============================================================
 # 仿真 (cocotb — 默认)
 # ============================================================
 .PHONY: sim
 sim:
 	@echo "Running cocotb simulation..."
-	cd $(SIM_DIR) && MODULE=$(TOP) TOP=$(TOP) make
+	cd $(SIM_DIR) && $(PYTHON) -m cocotb $(TOP)
 
 # 传统 Verilog testbench (仅在明确要求时)
 .PHONY: sim-verilog
@@ -37,14 +41,12 @@ sim-verilog:
 .PHONY: lint
 lint:
 	@echo "Running Verible lint..."
-	verible-verilog-lint $(SRC_DIR)/*.v
-	@echo "Running Verilator lint..."
-	verilator --lint-only -Wall $(SRC_DIR)/*.v 2>/dev/null || true
+	$(VERIBLE)\verible-verilog-lint.exe $(SRC_DIR)/*.v
 
 .PHONY: format
 format:
 	@echo "Formatting with Verible..."
-	verible-verilog-format --inplace $(SRC_DIR)/*.v
+	$(VERIBLE)\verible-verilog-format.exe --inplace $(SRC_DIR)/*.v
 
 # ============================================================
 # Vivado 综合 (non-project mode)
