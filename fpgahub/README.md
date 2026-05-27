@@ -27,21 +27,32 @@ fpgahub/
 
 ## 快速开始
 
-### 1. 新工程初始化
+### 1. 新工程初始化 (Windows)
 
-```bash
-# 复制 AGENTS.md 模板到新工程
-cp fpgahub/templates/AGENTS.md <new_project>/AGENTS.md
-
-# 改 3 行: 器件、时钟、仿真工具
-# 然后 AI 自动遵守这些规范
+```powershell
+# 下载工具包到新工程
+cd D:\my_new_project
+git clone https://github.com/lakabuji-arch/fpga-ai-toolkit.git temp
+Move-Item temp\fpgahub .\; Move-Item temp\AGENTS.md .\; Move-Item temp\.gitignore .\; Remove-Item -Recurse -Force temp
 ```
 
-### 2. 安装 Skills
+### 2. 填配置（改占位符）
 
-```bash
-# 将 skills 目录复制到 ~/.claude/skills/
-# 或直接使用 VS Code Copilot 内置 Skills 目录
+> 所有需修改的位置都用 `<YOUR_...>` 或 `<your_...>` 标记，搜索即可找到。
+
+| 文件 | 占位符 | 改成 |
+|------|--------|------|
+| `AGENTS.md` | `<YOUR_PART>` | 你的 FPGA 型号 |
+| `AGENTS.md` | `<YOUR_TOOL>` | Vivado / Quartus 版本 |
+| `AGENTS.md` | `<YOUR_CLK_A/B>` | 你的时钟列表 |
+| `fpgahub\tools\scripts\Makefile` | `<your_project_name>` | 工程名 |
+| `fpgahub\tools\scripts\Makefile` | `<top_module_name>` | 顶层模块名 |
+| `fpgahub\tools\scripts\Makefile` | `<part_number>` | 器件编号 |
+
+### 3. 安装 Skills（一次性，全局）
+
+```powershell
+Copy-Item -Recurse fpgahub\skills\* $env:USERPROFILE\.claude\skills\ -Force
 ```
 
 ### 3. 工具链配置
