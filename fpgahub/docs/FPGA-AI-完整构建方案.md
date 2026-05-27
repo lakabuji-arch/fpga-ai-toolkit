@@ -488,13 +488,13 @@ Linux/Mac:
 
 | 工具 | 类型 | 来源项目 | 状态 | 优先级 |
 |------|------|----------|:---:|:---:|
-| **vcd-mcp** | MCP Server | `impakt73/ai-rust-hw-dev` | ⏳ 配置指南已写，待编译 | ⭐⭐⭐ |
-| **Verible** | CLI linter | `openhwgroup/cva6` (via lowRISC) | ⏳ 待安装 | ⭐⭐⭐ |
-| **Verilator** | 仿真器 | `verilator/verilator` | ⏳ 待安装 | ⭐⭐ |
-| **cocotb** | 验证框架 | `cocotb/cocotb` | ⏳ 待安装 | ⭐⭐ |
+| **vcd-mcp** | MCP Server | `impakt73/ai-rust-hw-dev` | ✅ `C:\vcd-mcp\target\release\vcd-mcp.exe` | ⭐⭐⭐ |
+| **Verible** | CLI linter | `openhwgroup/cva6` (via lowRISC) | ✅ | ⭐⭐⭐ |
+| **Python + cocotb** | 验证框架 | `cocotb/cocotb` | ✅ | ⭐⭐ |
 | **Makefile** | 构建 | `darklife/darkriscv` + `ADI HDL` | ✅ fpgahub/tools/scripts/Makefile | ⭐⭐⭐ |
 | **run_synth.tcl** | Vivado 综合 | `ADI HDL` + AMD UG835 | ✅ fpgahub/tools/scripts/run_synth.tcl | ⭐⭐⭐ |
 | **run_build.tcl** | Vivado 全流程 | `ADI HDL` + AMD UG835 | ✅ fpgahub/tools/scripts/run_build.tcl | ⭐⭐⭐ |
+| **Verilator** | 仿真器 | `verilator/verilator` | ⏳ 待安装 (非必需) | ⭐ |
 
 ## 3.2 vcd-mcp — AI 分析波形
 
@@ -682,15 +682,15 @@ all: lint synth sim
 
 | 优先级 | 行动 | 状态 |
 |:---:|------|:---:|
-| 1 | 给 JESD204B 工程写 AGENTS.md | ✅ 已完成 |
-| 2 | 创建 FPGA Skills (xpm-selector 等4个) | ✅ 已完成 |
-| 3 | 创建 AGENTS.md 模板 | ✅ 已完成 |
-| 4 | 创建 Makefile + Tcl 自动化脚本 | ✅ 已完成 |
-| 5 | 创建完整方案文档 | ✅ 已完成 |
-| 6 | 搭建 vcd-mcp (编译+配置) | ⏳ |
-| 7 | 安装 Verible + 集成到 CI | ⏳ |
-| 8 | 安装 cocotb | ⏳ |
+| 1 | 给 JESD204B 工程写 AGENTS.md | ✅ |
+| 2 | 创建 FPGA Skills (5个) | ✅ |
+| 3 | 创建 AGENTS.md 模板 | ✅ |
+| 4 | 创建 Makefile + Tcl 脚本 | ✅ |
+| 5 | 创建构建方案文档 | ✅ |
+| 6 | 搭建 vcd-mcp | ✅ |
+| 7 | 安装 Verible | ✅ |
+| 8 | 安装 Python + cocotb | ✅ |
 | 9 | 创建 gt-config Skill | ⏳ |
-| 10 | 搭建 GitHub CI (自动跑仿真+综合) | ⏳ |
-| 11 | 用 cocotb 替代 Verilog testbench | ⏳ |
+| 10 | 搭建 GitHub CI | ⏳ |
+| 11 | 安装 Verilator (非必需) | ⏳ |
 

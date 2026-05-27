@@ -10,9 +10,11 @@ VCD MCP 是一个 MCP (Model Context Protocol) 服务器，让 AI 直接读取�
 
 ### 前置条件
 ```bash
-# 需要 Rust 工具链
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# 或 Windows: https://rustup.rs/
+# 需要 Rust 工具链 + MinGW (Windows)
+# 1. 安装 Rust: https://rustup.rs/
+# 2. 安装 MinGW: winget install MSYS2.MSYS2
+#    MSYS2终端运行: pacman -S mingw-w64-x86_64-gcc
+# 3. 切换到GNU工具链: rustup default stable-x86_64-pc-windows-gnu
 ```
 
 ### 编译
@@ -20,9 +22,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 git clone https://github.com/impakt73/ai-rust-hw-dev.git
 cd ai-rust-hw-dev/vcd-mcp
 cargo build --release
-# 二进制在: ./target/release/vcd-mcp (Linux/Mac)
-# 或 ./target/release/vcd-mcp.exe (Windows)
+# 二进制在: ./target/release/vcd-mcp.exe (Windows)
 ```
+
+> 本机已安装路径: `C:\vcd-mcp\target\release\vcd-mcp.exe`
 
 ## 配置到 VS Code Copilot
 
@@ -32,7 +35,7 @@ cargo build --release
 {
   "mcp.servers": {
     "vcd-mcp": {
-      "command": "D:/path/to/vcd-mcp.exe"
+      "command": "C:/vcd-mcp/target/release/vcd-mcp.exe"
     }
   }
 }

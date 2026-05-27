@@ -44,15 +44,20 @@ cp fpgahub/templates/AGENTS.md <new_project>/AGENTS.md
 # 或直接使用 VS Code Copilot 内置 Skills 目录
 ```
 
-### 3. 工具链配置 (可选)
+### 3. 工具链配置
 
-```bash
-# Verible (SystemVerilog 格式化)
-# https://github.com/chipsalliance/verible/releases
+> ✅ 本机已安装以下工具，路径供参考：
 
-# vcd-mcp (AI 分析波形)
-# 见 tools/vcd-mcp/README.md
-```
+| 工具 | 版本 | 路径 |
+|------|------|------|
+| Rust | 1.95.0 | `~/.cargo/bin` |
+| MinGW GCC | 15.2.0 | `C:\msys64\mingw64\bin` |
+| Python | 3.13.13 | `%LOCALAPPDATA%\Programs\Python\Python313` |
+| cocotb | 2.0.1 | pip 全局 |
+| Verible | v0.0-4053 | `C:\verible\verible-v0.0-4053-g89d4d98a-win64\` |
+| vcd-mcp | — | `C:\vcd-mcp\target\release\vcd-mcp.exe` |
+
+**新机安装**: 见 `docs/FPGA-AI-完整构建方案.md`
 
 ### 4. 日常命令
 
